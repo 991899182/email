@@ -29,12 +29,7 @@ const Footer: React.FC = () => {
             </Link>
           </div>
           <div className="flex justify-center items-center space-x-4">
-            <a
-              href="https://zaunist.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
+          
              
             </a>
           </div>
