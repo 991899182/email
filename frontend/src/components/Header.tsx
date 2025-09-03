@@ -55,7 +55,19 @@ const Header: React.FC<HeaderProps> = ({
                 domains={emailDomains}
                 isLoading={isLoading}
               />
-             
+              <div className="ml-3 pl-3 border-l border-muted-foreground/20 flex items-center">
+                <LanguageSwitcher />
+                <a
+                  href="https://github.com/zaunist/zmail"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-200 hover:bg-primary/20 hover:text-primary hover:scale-110 ml-1"
+                  aria-label="GitHub"
+                  title="GitHub"
+                >
+                  <i className="fab fa-github text-base"></i>
+                </a>
+              </div>
             </div>
           )}
         </div>
