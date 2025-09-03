@@ -46,30 +46,7 @@ const Header: React.FC<HeaderProps> = ({
             {t('app.title')}
           </Link>
           
-          {mailbox && (
-            <div className="flex items-center bg-muted/70 rounded-md px-3 py-1.5">
-              <HeaderMailbox 
-                mailbox={mailbox} 
-                onMailboxChange={onMailboxChange}
-                domain={defaultDomain}
-                domains={emailDomains}
-                isLoading={isLoading}
-              />
-              <div className="ml-3 pl-3 border-l border-muted-foreground/20 flex items-center">
-                <LanguageSwitcher />
-                <a
-                  href="https://github.com/zaunist/zmail"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-200 hover:bg-primary/20 hover:text-primary hover:scale-110 ml-1"
-                
-                >
-                  <i className="fab fa-github text-base"></i>
-                </a>
-              </div>
-            </div>
-          )}
-        </div>
+
       </Container>
     </header>
   );
