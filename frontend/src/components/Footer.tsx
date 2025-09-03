@@ -21,11 +21,11 @@ const Footer: React.FC = () => {
             >
               {t("common.privacyPolicy", "隐私政策")}
             </Link>
-            <Link to="https://www.xinyonghu.com" className="hover:text-primary transition-colors">
-              {t("common.terms", "拼多多助力")}
+            <Link to="https://0xy.shop" className="hover:text-primary transition-colors">
+              {t("common.terms", "斗篷")}
             </Link>
-            <Link to="/about" className="hover:text-primary transition-colors">
-              {t("common.about", "关于我们")}
+            <Link to="https://www.xinyonghu.com" className="hover:text-primary transition-colors">
+              {t("common.about", "拼多多助力")}
             </Link>
           </div>
         </div>
