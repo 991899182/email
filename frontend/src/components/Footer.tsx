@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
               {t("common.privacyPolicy", "隐私政策")}
             </Link>
             <Link to="https://0xy.shop" className="hover:text-primary transition-colors">
-              {t("common.terms", "斗篷")}
+              {t("common.terms", "斗篷过滤")}
             </Link>
             <Link to="https://www.xinyonghu.com" className="hover:text-primary transition-colors">
               {t("common.about", "拼多多助力")}
