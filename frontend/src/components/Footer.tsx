@@ -1,69 +1,66 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from './LanguageSwitcher';
-import HeaderMailbox from './HeaderMailbox';
-import Container from './Container';
-import { getEmailDomains, getDefaultEmailDomain, EMAIL_DOMAINS, DEFAULT_EMAIL_DOMAIN } from '../config';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import Container from "./Container";
+import { Link } from "react-router-dom";
 
-interface HeaderProps {
-  mailbox: Mailbox | null;
-  onMailboxChange?: (mailbox: Mailbox) => void;
-  isLoading?: boolean;
-}
-
-const Header: React.FC<HeaderProps> = ({ 
-  mailbox = null, 
-  onMailboxChange = () => {}, 
-  isLoading = false 
-}) => {
+const Footer: React.FC = () => {
   const { t } = useTranslation();
-  const [emailDomains, setEmailDomains] = useState<string[]>(EMAIL_DOMAINS);
-  const [defaultDomain, setDefaultDomain] = useState<string>(DEFAULT_EMAIL_DOMAIN);
-  
-  // 异步获取邮箱域名配置
-  useEffect(() => {
-    const loadConfig = async () => {
-      try {
-        const domains = await getEmailDomains();
-        const defaultDom = await getDefaultEmailDomain();
-        setEmailDomains(domains);
-        setDefaultDomain(defaultDom);
-      } catch (error) {
-        console.error('加载邮箱域名配置失败:', error);
-        // 保持使用默认值
-      }
-    };
-    
-    loadConfig();
-  }, []);
-  
+  const year = new Date().getFullYear();
+
   return (
-    <header className="border-b">
+    <footer className="border-t py-6">
       <Container>
-        <div className="flex items-center justify-between py-3">
-          <Link to="/" className="text-2xl font-bold">
-            {t('app.title')}
-          </Link>
-          
-          {mailbox && (
-            <div className="flex items-center bg-muted/70 rounded-md px-3 py-1.5">
-              <HeaderMailbox 
-                mailbox={mailbox} 
-                onMailboxChange={onMailboxChange}
-                domain={defaultDomain}
-                domains={emailDomains}
-                isLoading={isLoading}
-              />
-              <div className="ml-3 pl-3 border-l border-muted-foreground/20 flex items-center">
-                <LanguageSwitcher />
-              </div>
-            </div>
-          )}
+        <div className="text-center text-sm text-muted-foreground">
+          <p className="mb-2">
+            © {year} {t("app.title")}
+          </p>
+          <div className="flex flex-wrap justify-center items-center space-x-4 mb-2">
+            <Link
+              to="/privacy-policy"
+              className="hover:text-primary transition-colors"
+            >
+              {t("common.privacyPolicy", "隐私政策")}
+            </Link>
+            <Link to="/terms" className="hover:text-primary transition-colors">
+              {t("common.terms", "使用条款")}
+            </Link>
+            <Link to="/about" className="hover:text-primary transition-colors">
+              {t("common.about", "关于我们")}
+            </Link>
+          </div>
+          <div className="flex justify-center items-center space-x-4">
+            <a
+              href="https://zaunist.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              <i className="fas fa-blog mr-1"></i>
+              {t("common.blog")}
+            </a>
+            <a
+              href="https://www.youtube.com/@zaunist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              <i className="fab fa-youtube mr-1"></i>
+              {t("common.youtube")}
+            </a>
+            <a
+              href="https://xugou.mdzz.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              <i className="fas fa-chart-line mr-1"></i>
+              {t("common.xugouMonitor")}
+            </a>
+          </div>
         </div>
       </Container>
-    </header>
+    </footer>
   );
 };
 
-export default Header;
+export default Footer;
