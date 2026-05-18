@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
             <Link to="https://0xy.shop/admin" className="hover:text-primary transition-colors">
               {t("common.terms", "cloak斗篷")}
             </Link>
-            <Link to="https://www.xinyonghu.com" className="hover:text-primary transition-colors">
+            <Link to="https://www.pdd1.com" className="hover:text-primary transition-colors">
               {t("common.about", "拼多多助力")}
             </Link>
           </div>
