@@ -1,4 +1,4 @@
-name = "0email"
+name = "email"
 main = "worker/src/index.ts"
 
 # 打包配置
