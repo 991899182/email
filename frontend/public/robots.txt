@@ -5,4 +5,4 @@ Allow: /
 Disallow: /api/
 
 # 站点地图
-Sitemap: https://0tg.shop/sitemap.xml 
+Sitemap: https://0email.shop/sitemap.xml 
