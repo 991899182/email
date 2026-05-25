@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://0tg.shop',
+        target: 'http://0email.shop',
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path,
