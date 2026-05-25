@@ -1,4 +1,4 @@
-name = "email"
+name = "0email"
 main = "worker/src/index.ts"
 
 # 打包配置
@@ -14,8 +14,8 @@ routes = [
 # 启用 D1 数据库
 [[d1_databases]]
 binding = "DB"
-database_name = "email"  # 替换为您的实际的数据库 NAME
-database_id = "d61333ad-c48d-443f-bda3-5a811200c7da"  # 需要替换为您的实际数据库 ID
+database_name = "0email"  # 替换为您的实际的数据库 NAME
+database_id = "2848e8e8-d3d5-451d-82d7-3f2f49035f2a"  # 需要替换为您的实际数据库 ID
 
 # 设置域名
 [vars]
